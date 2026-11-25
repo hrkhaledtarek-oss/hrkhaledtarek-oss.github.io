@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Khaled Tarek</title>
+<meta name="description" content="Certified Technical Recruiter hiring software, QA, DevOps and IT talent. 22-day average time-to-fill and 100% offer acceptance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one narrow column built for a phone, an ATS-style pipeline as the signature element. Navy ink, one amber accent. */
+:root{
+  --ink:#0B1A2B;
+  --panel:#112339;
+  --line:#243f5d;
+  --text:#E9EFF6;
+  --mute:#9bb0c6;
+  --amber:#F2B84B;
+  --amber-ink:#2a1d00;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ink);color:var(--text);
+  font-family:var(--body);font-size:17px;line-height:1.55;
+  padding:0 0 calc(92px + env(safe-area-inset-bottom));
+  background-image:
+    linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;
+  background-position:-1px -1px;
+  background-attachment:fixed;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% 0%,rgba(11,26,43,.55) 0%,var(--ink) 70%);
+}
+.wrap{position:relative;max-width:720px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left)) 0 max(18px,env(safe-area-inset-right))}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+.mono{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--mute)}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(18px + env(safe-area-inset-top)) 0 10px}
+.mark{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:18px}
+.avatar{width:38px;height:38px;border-radius:10px;background:var(--amber);color:var(--amber-ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:16px}
+.status{display:flex;align-items:center;gap:8px}
+.status i{width:8px;height:8px;border-radius:50%;background:#5ad19a;box-shadow:0 0 0 4px rgba(90,209,154,.18)}
+
+/* hero */
+.hero{padding:34px 0 26px}
+.role{display:inline-block;margin-bottom:16px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(17,35,57,.7)}
+h1{font-size:clamp(38px,11vw,68px);line-height:1.02;font-weight:800;letter-spacing:-.025em}
+h1 em{font-style:normal;color:var(--amber)}
+.lede{margin:18px 0 0;color:var(--mute);font-size:18px;max-width:34em}
+.lede b{color:var(--text);font-weight:600}
+
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:26px}
+.stat{padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(17,35,57,.82)}
+.stat b{display:block;font-family:var(--display);font-weight:800;font-size:34px;line-height:1;color:var(--text);font-variant-numeric:tabular-nums}
+.stat b span{color:var(--amber)}
+.stat small{display:block;margin-top:8px;color:var(--mute);font-size:14px;line-height:1.35}
+
+section{padding:30px 0 6px}
+.label{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.label h2{font-size:26px;font-weight:700;letter-spacing:-.01em}
+.label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* pipeline */
+.panel{border:1px solid var(--line);border-radius:16px;background:rgba(17,35,57,.88);padding:18px}
+.pipe{display:grid;gap:18px}
+.row .head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+.row .head span:first-child{font-weight:600}
+.row .head b{font-family:var(--mono);font-weight:500;font-size:20px;color:var(--amber);font-variant-numeric:tabular-nums}
+.track{height:12px;border-radius:99px;background:#0b1a2b;border:1px solid var(--line);overflow:hidden}
+.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#c98f1f,var(--amber));transform-origin:left;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}
+.row:nth-child(2) .fill{animation-delay:.12s}
+.row:nth-child(3) .fill{animation-delay:.24s}
+.row:nth-child(4) .fill{animation-delay:.36s}
+@keyframes grow{from{transform:scaleX(0)}}
+.note{margin:16px 0 0;color:var(--mute);font-size:15px}
+
+/* experience */
+.job{position:relative;padding:0 0 26px 22px;border-left:1px solid var(--line);margin-left:6px}
+.job:last-child{padding-bottom:6px}
+.job::before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--ink);border:2px solid var(--amber)}
+.job.now::before{background:var(--amber)}
+.job h3{font-size:21px;font-weight:700;line-height:1.2}
+.job .co{margin:2px 0 0;font-weight:600;color:var(--text)}
+.job .when{display:block;margin:4px 0 10px}
+.job ul{margin:0;padding:0 0 0 18px;color:var(--mute)}
+.job li{margin:0 0 6px;padding-left:2px}
+.job li b{color:var(--text);font-weight:600}
+.job li::marker{color:var(--amber)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(17,35,57,.82);font-size:15px}
+.chip.hot{border-color:var(--amber);color:var(--amber)}
+.group{margin:0 0 20px}
+.group .mono{display:block;margin-bottom:10px}
+
+/* cards */
+.cards{display:grid;gap:10px}
+.card{padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(17,35,57,.86)}
+.card h3{font-size:18px;font-weight:700;line-height:1.25}
+.card p{margin:6px 0 0;color:var(--mute);font-size:15.5px}
+.card .mono{display:block;margin-top:8px}
+.card.star{border-color:var(--amber)}
+
+/* contact */
+.contact{margin-top:10px;padding:22px 18px;border:1px solid var(--amber);border-radius:18px;background:linear-gradient(180deg,rgba(242,184,75,.12),rgba(17,35,57,.9))}
+.contact h2{font-size:clamp(28px,8vw,40px);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.contact p{margin:12px 0 18px;color:var(--mute)}
+.line{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid var(--line);flex-wrap:wrap}
+.line .v{font-family:var(--mono);font-size:15px;overflow-wrap:anywhere;color:var(--text)}
+.copy{appearance:none;border:1px solid var(--line);background:transparent;color:var(--text);font:600 14px var(--body);padding:9px 14px;border-radius:999px;cursor:pointer;min-height:40px}
+.copy:hover{border-color:var(--amber);color:var(--amber)}
+.linkrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none;border:1px solid var(--line);background:var(--panel);color:var(--text)}
+.btn.main{background:var(--amber);color:var(--amber-ink);border-color:var(--amber)}
+footer{padding:28px 0 8px;color:var(--mute);font-size:14px}
+
+/* bottom action bar */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:5;padding:10px max(14px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));background:rgba(11,26,43,.94);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.dock .in{max-width:720px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:8px}
+.dock a,.dock button{min-height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font:600 15px var(--body);text-decoration:none;cursor:pointer}
+.dock .wa{background:var(--amber);color:var(--amber-ink);border:1px solid var(--amber)}
+.dock .li,.dock .em{background:var(--panel);color:var(--text);border:1px solid var(--line)}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--text);color:var(--ink);padding:9px 16px;border-radius:999px;font-weight:600;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:6}
+.toast.show{opacity:1}
+
+/* about */
+.about p{margin:0 0 14px}
+.about .headline{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(17,35,57,.82);line-height:1.5}
+.about b{font-weight:600;color:var(--text)}
+.about ul{margin:0 0 14px;padding:0 0 0 20px;color:var(--mute)}
+.about li{margin:0 0 6px}
+.about li::marker{color:var(--amber)}
+.hero-links{margin-top:22px}
+.hero-links .btn{flex:1 1 150px}
+button.btn{font-family:var(--body);cursor:pointer}
+
+/* CV sheet */
+.cv-overlay{position:fixed;inset:0;z-index:20;background:var(--ink);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.cv-overlay[hidden]{display:none}
+.cv-bar{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:calc(10px + env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) 10px max(14px,env(safe-area-inset-left));background:rgba(11,26,43,.96);border-bottom:1px solid var(--line)}
+.cv-actions{display:flex;gap:8px}
+.cv-actions .copy{display:inline-flex;align-items:center;text-decoration:none}
+.paper{max-width:760px;margin:18px auto calc(40px + env(safe-area-inset-bottom));padding:26px max(20px,env(safe-area-inset-left));background:#fbfaf7;color:#1b2430;border-radius:6px;width:calc(100% - 24px);font-size:15.5px;line-height:1.5}
+.paper h2{font-size:30px;font-weight:800;color:#1F3864;letter-spacing:-.01em}
+.paper .p-role{margin:2px 0 8px;font-size:17px;font-weight:600}
+.paper .p-contact{margin:0 0 6px;font-size:14px;color:#46546a;overflow-wrap:anywhere}
+.paper h3{margin:22px 0 8px;padding-bottom:4px;border-bottom:1.5px solid #1F3864;font-size:16px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#1F3864}
+.paper h4{margin:14px 0 6px;font-family:var(--body);font-size:15.5px;font-weight:700;line-height:1.3}
+.paper h4 span{display:block;margin-top:2px;font-weight:500;font-size:14px;color:#46546a}
+.paper p{margin:0 0 8px}
+.paper ul{margin:0 0 6px;padding:0 0 0 20px}
+.paper li{margin:0 0 5px}
+.paper b{font-weight:700}
+@media (min-width:640px){.paper{width:100%;padding:34px 40px}.paper h4 span{display:inline;margin-left:8px}}
+
+@media (min-width:640px){
+  body{font-size:18px}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .stat b{font-size:30px}
+  .cards{grid-template-columns:1fr 1fr}
+  .card.wide{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){.fill{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="mark"><span class="avatar" aria-hidden="true">KT</span><span>Khaled Tarek</span></div>
+    <div class="status mono"><i aria-hidden="true"></i>Open to connect</div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="role mono">Certified Technical Recruiter</span>
+      <h1>Technical hiring, <em>without lowering the bar.</em></h1>
+      <p class="lede">I help companies hire <b>software, QA, DevOps and IT</b> talent faster. At Luftborn I filled technical roles in an average of 22 days and every offer I made was accepted.</p>
+
+      <div class="linkrow hero-links">
+        <button class="btn main" type="button" id="open-cv">View my CV</button>
+        <a class="btn" href="https://www.linkedin.com/in/khaled-tarek-26848a190/">LinkedIn profile</a>
+      </div>
+
+      <div class="stats" aria-label="Results at Luftborn">
+        <div class="stat"><b>22<span>d</span></b><small>average time-to-fill</small></div>
+        <div class="stat"><b>100<span>%</span></b><small>offer acceptance</small></div>
+        <div class="stat"><b>10</b><small>technical hires, 4 roles, 9 months</small></div>
+        <div class="stat"><b>300<span>+</span></b><small>hires across my career</small></div>
+      </div>
+    </div>
+
+    <section aria-labelledby="about-h">
+      <div class="label"><h2 id="about-h">About</h2></div>
+      <div class="about">
+        <p class="headline mono">Certified Technical Recruiter | Tech &amp; IT Recruitment | Talent Acquisition | Software, QA, DevOps &amp; IT Support Hiring | AI-Powered hiring</p>
+        <p>I'm a Certified Technical Recruiter who helps companies hire software, QA, DevOps and IT talent faster, without lowering the bar.</p>
+        <p>At Luftborn I hired <b>10 technical candidates across 4 roles in 9 months</b>, with a <b>22-day</b> average time-to-fill and <b>100% offer acceptance</b>. Before that, I delivered <b>100+ hires at WUZZUF</b> and <b>200+ at Teleperformance</b>.</p>
+        <p class="mono">What I do</p>
+        <ul>
+          <li>Full-cycle technical recruitment: intake, sourcing, screening, offers and onboarding</li>
+          <li>Sourcing through LinkedIn Recruiter, GitHub, Stack Overflow, Behance and tech communities</li>
+          <li>Technical and behavioral screening that checks skills, problem-solving, communication and fit</li>
+          <li>Partnering with hiring managers and tech leads on requirements, feedback and timelines</li>
+          <li>Using AI agents and AI tools to speed up sourcing, screening and interview documentation</li>
+          <li>Training and mentoring junior recruiters</li>
+        </ul>
+        <p>Let's connect if you're hiring technical talent, building a recruitment function, or want to talk about AI in hiring.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="pipe-h">
+      <div class="label"><h2 id="pipe-h">My pipeline</h2></div>
+      <div class="panel">
+        <div class="pipe">
+          <div class="row">
+            <div class="head"><span>Sourcing to shortlist</span><b>78%</b></div>
+            <div class="track"><div class="fill" style="width:78%"></div></div>
+          </div>
+          <div class="row">
+            <div class="head"><span>Screening to interview</span><b>88%</b></div>
+            <div class="track"><div class="fill" style="width:88%"></div></div>
+          </div>
+          <div class="row">
+            <div class="head"><span>Candidate show-up</span><b>100%</b></div>
+            <div class="track"><div class="fill" style="width:100%"></div></div>
+          </div>
+          <div class="row">
+            <div class="head"><span>Offer acceptance</span><b>100%</b></div>
+            <div class="track"><div class="fill" style="width:100%"></div></div>
+          </div>
+        </div>
+        <p class="note">Full cycle, owned end to end: intake with the hiring manager, sourcing, technical and behavioral screening, offer and onboarding.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="exp-h">
+      <div class="label"><h2 id="exp-h">Experience</h2></div>
+
+      <div class="job now">
+        <h3>Technical Recruitment Specialist</h3>
+        <p class="co">Luftborn</p>
+        <span class="when mono">Feb 2026 to present</span>
+        <ul>
+          <li>Hired <b>10 technical candidates across 4 roles in 9 months</b>, with a <b>22-day</b> average time-to-fill.</li>
+          <li>Built a pipeline of <b>100+ qualified candidates</b> through LinkedIn Recruiter, GitHub, Stack Overflow, Behance, referrals and tech communities.</li>
+          <li>Run technical and behavioral screening and align with tech leads on feedback and decisions.</li>
+          <li>Use <b>AI agents</b> to automate sourcing and hiring workflows, and AI tools for screening prep and interview notes.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Recruitment Specialist</h3>
+        <p class="co">WUZZUF</p>
+        <span class="when mono">Feb 2024 to Feb 2026</span>
+        <ul>
+          <li>Delivered <b>100+ hires</b> across <b>100+ roles</b> for <b>20+ hiring managers</b>.</li>
+          <li>Ran salary benchmarking and market research for 100+ roles.</li>
+          <li>Trained and mentored <b>2 junior recruiters</b> and led onboarding sessions for new recruiters.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Recruitment Specialist, Mass &amp; IT Hiring</h3>
+        <p class="co">Teleperformance</p>
+        <span class="when mono">Feb 2023 to Feb 2024</span>
+        <ul>
+          <li>Delivered <b>200+ hires</b> across operational and IT roles, with <b>1,000+ applicants</b> in the pipeline at peak.</li>
+          <li>Planned hiring campaigns against headcount targets and tight deadlines.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h3>Customer Service Representative</h3>
+        <p class="co">Teleperformance, then Xceed</p>
+        <span class="when mono">Feb 2020 to Feb 2023</span>
+        <ul>
+          <li>Three years of high-volume support work. Ranked third on the floor for performance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="tools-h">
+      <div class="label"><h2 id="tools-h">How I work</h2></div>
+      <div class="group">
+        <span class="mono">Sourcing and screening</span>
+        <div class="chips">
+          <span class="chip hot">Technical recruitment</span><span class="chip hot">Boolean search</span><span class="chip">Talent acquisition</span><span class="chip">Technical screening</span><span class="chip">Candidate experience</span><span class="chip">Employer branding</span>
+        </div>
+      </div>
+      <div class="group">
+        <span class="mono">Tools</span>
+        <div class="chips">
+          <span class="chip">LinkedIn Recruiter</span><span class="chip">Teamtailor</span><span class="chip">Talentlyft</span><span class="chip">GitHub</span><span class="chip">Stack Overflow</span><span class="chip">Behance</span>
+        </div>
+      </div>
+      <div class="group">
+        <span class="mono">AI in hiring</span>
+        <div class="chips">
+          <span class="chip hot">AI agents for sourcing and hiring</span><span class="chip">AI-assisted screening</span><span class="chip">Interview documentation</span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="cert-h">
+      <div class="label"><h2 id="cert-h">Certified</h2></div>
+      <div class="cards">
+        <div class="card star wide">
+          <h3>Tech Recruitment Certified Professional</h3>
+          <span class="mono">SkillPanel, 2026</span>
+        </div>
+        <div class="card"><h3>Generative AI Course</h3><span class="mono">Sprints, 2024</span></div>
+        <div class="card"><h3>Interviewing Job Candidates for Recruiters</h3><span class="mono">LinkedIn Learning, 2024</span></div>
+        <div class="card wide"><h3>Human Resources Professional Certificate</h3><span class="mono">Leaders, 2023</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="edu-h">
+      <div class="label"><h2 id="edu-h">Education</h2></div>
+      <div class="cards">
+        <div class="card wide"><h3>Bachelor's degree, Food Science</h3><p>Faculty of Agriculture, Cairo University. Grade: Very Good.</p><span class="mono">2018 to 2022</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="svc-h">
+      <div class="label"><h2 id="svc-h">I also help job seekers</h2></div>
+      <div class="cards">
+        <div class="card"><h3>CV review</h3><p>Clear, ATS-friendly CVs that get shortlisted.</p></div>
+        <div class="card"><h3>LinkedIn optimization</h3><p>Headline, About and skills that recruiters find.</p></div>
+        <div class="card wide"><h3>Interview preparation</h3><p>Mock interviews, structured feedback and job search strategy.</p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="contact-h">
+      <div class="contact">
+        <h2 id="contact-h">Hiring technical talent? Let's talk.</h2>
+        <p>Message me on WhatsApp or LinkedIn, or copy my details below.</p>
+        <div class="line"><span class="v" id="mail">ta.khaled.tarek@outlook.com</span><button class="copy" type="button" data-copy="ta.khaled.tarek@outlook.com">Copy email</button></div>
+        <div class="line"><span class="v" id="tel">+20 100 284 1327</span><button class="copy" type="button" data-copy="+201002841327">Copy number</button></div>
+        <div class="linkrow">
+          <a class="btn main" href="https://wa.me/201002841327">WhatsApp me</a>
+          <a class="btn" href="https://www.linkedin.com/in/khaled-tarek-26848a190/">LinkedIn profile</a>
+          <button class="btn" type="button" data-open-cv>View my CV</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Khaled Tarek, Certified Technical Recruiter</footer>
+</div>
+
+<nav class="dock" aria-label="Quick contact">
+  <div class="in">
+    <button class="wa" type="button" data-open-cv>View CV</button>
+    <a class="li" href="https://www.linkedin.com/in/khaled-tarek-26848a190/">LinkedIn</a>
+    <a class="em" href="https://wa.me/201002841327">WhatsApp</a>
+  </div>
+</nav>
+<div class="cv-overlay" id="cv" role="dialog" aria-modal="true" aria-labelledby="cv-title" hidden>
+  <div class="cv-bar">
+    <span class="mono" id="cv-title">Khaled Tarek, CV</span>
+    <div class="cv-actions">
+      <a class="copy" href="https://www.linkedin.com/in/khaled-tarek-26848a190/">LinkedIn</a>
+      <button class="copy" type="button" id="close-cv">Close</button>
+    </div>
+  </div>
+  <article class="paper">
+    <h2>Khaled Tarek</h2>
+    <p class="p-role">Certified Technical Recruiter</p>
+    <p class="p-contact">ta.khaled.tarek@outlook.com | 01002841327 | 01114880211<br>linkedin.com/in/khaled-tarek-26848a190</p>
+
+    <h3>Professional Summary</h3>
+    <p>Certified technical recruiter with <b>3+ years</b> of full-cycle hiring across software, QA, DevOps and IT roles, and <b>300+ hires</b> across technical and operational positions. At Luftborn I hired <b>10 technical candidates across 4 roles in 9 months</b>, with a <b>22-day</b> average time-to-fill and <b>100% offer acceptance</b>. My pipeline metrics: <b>78%</b> sourcing-to-shortlist conversion, <b>88%</b> screening-to-interview conversion and <b>100%</b> candidate show-up. Previously at WUZZUF I delivered <b>100+ hires</b> for <b>20+ hiring managers</b> and trained junior recruiters. Strong in Boolean sourcing, structured technical screening, Teamtailor and Talentlyft ATS, and <b>AI agents for sourcing and hiring</b>.</p>
+
+    <h3>Professional Experience</h3>
+    <h4>Technical Recruitment Specialist, Luftborn <span>Feb 2026 – Present</span></h4>
+    <ul>
+      <li>Own end-to-end technical hiring for software engineering, QA, DevOps and related roles, from intake with hiring managers through sourcing, screening, offer and onboarding.</li>
+      <li>Hired <b>10 technical candidates across 4 roles in 9 months</b>, with a <b>22-day</b> average time-to-fill for priority roles and <b>100% offer acceptance</b>.</li>
+      <li>Built and activated a pipeline of <b>100+ qualified candidates</b> using LinkedIn Recruiter, GitHub, Stack Overflow, Behance, referrals and tech communities.</li>
+      <li>Run technical and behavioral screening interviews and align with technical leads on feedback, decisions and timelines.</li>
+      <li>Use <b>AI agents</b> to automate candidate sourcing and hiring workflows, and AI tools for screening preparation and interview documentation.</li>
+      <li>Manage pipelines, interview records and reporting in Teamtailor ATS.</li>
+      <li>Support employer branding through hiring campaigns and university career fairs.</li>
+    </ul>
+    <h4>Recruitment Specialist, WUZZUF <span>Feb 2024 – Feb 2026</span></h4>
+    <ul>
+      <li>Managed full-cycle recruitment for IT, software, technical and non-technical roles across multiple seniority levels.</li>
+      <li>Supported hiring across <b>100+ roles</b> and <b>20+ hiring managers</b>, delivering <b>100+ hires</b>.</li>
+      <li>Ran salary benchmarking and market research for <b>100+ roles</b> to support competitive offers.</li>
+      <li>Trained and mentored <b>2 junior recruiters</b> on sourcing, screening, ATS usage and pipeline management, and led onboarding sessions for new recruiters.</li>
+      <li>Managed high-volume pipelines in Talentlyft ATS and used AI tools (VideoApply, ChatGPT, Flowmingo, Fathom AI) for screening, video-interview evaluation and documentation.</li>
+      <li>Supported employer branding through job fairs, university career events and HR community engagement.</li>
+    </ul>
+    <h4>Recruitment Specialist, Mass &amp; IT Hiring, Teleperformance <span>Feb 2023 – Feb 2024</span></h4>
+    <ul>
+      <li>Delivered <b>200+ hires</b> across operational and IT roles (IT Support, Helpdesk, Technical Support), managing pipelines of <b>1,000+ applicants</b> at peak.</li>
+      <li>Planned and ran high-volume hiring campaigns against headcount targets and tight deadlines.</li>
+      <li>Handled sourcing, CV screening, interviews, offers, documentation and onboarding, and tracked hiring data and reporting.</li>
+    </ul>
+    <h4>Customer Service Representative (AT&amp;T, English), Teleperformance <span>Feb 2022 – Feb 2023</span></h4>
+    <ul>
+      <li>Supported US customers on billing, account and technical issues, plus upselling and cross-selling mobile and internet plans.</li>
+      <li>Ranked <b>third on the floor</b> for performance and recognized among top team achievers.</li>
+    </ul>
+    <h4>Customer Service Representative (COVID-19 Project, English), Xceed <span>Feb 2020 – Feb 2022</span></h4>
+    <ul>
+      <li>Handled high-volume COVID-19 support calls with accuracy and confidentiality, and escalated urgent cases to healthcare authorities.</li>
+    </ul>
+
+    <h3>Skills</h3>
+    <p><b>Recruitment:</b> full-cycle technical recruitment, Boolean search and sourcing, technical and behavioral screening, mass and high-volume hiring, salary benchmarking, offer management and onboarding, candidate experience, employer branding, recruiter training and mentoring</p>
+    <p><b>Tools:</b> Teamtailor, Talentlyft, LinkedIn Recruiter, WUZZUF platform, GitHub, Stack Overflow and Behance sourcing, Excel and Google Sheets</p>
+    <p><b>AI in recruitment:</b> AI agents for sourcing and hiring automation, AI-assisted screening, video-interview evaluation, interview documentation (ChatGPT, DeepSeek, VideoApply, Flowmingo, Fathom AI)</p>
+
+    <h3>Certifications</h3>
+    <ul>
+      <li>Tech Recruitment Certified Professional, SkillPanel (2026)</li>
+      <li>Generative AI Course, Sprints (Oct 2024)</li>
+      <li>HR Recruiting Communication Strategies, HRCI Accredited (Jul 2024)</li>
+      <li>Interviewing Job Candidates for Recruiters, LinkedIn Learning, HRCI Accredited (Jul 2024)</li>
+      <li>Human Resources Professional Certificate, Leaders, HRCI Accredited, 72 hrs (Jul 2023)</li>
+      <li>Leadership Course, Xceed (Nov 2020)</li>
+    </ul>
+
+    <h3>Education</h3>
+    <p><b>Bachelor's Degree in Food Science</b>, Faculty of Agriculture, Cairo University (Very Good), 2018 – 2022</p>
+
+    <h3>Languages</h3>
+    <p>Arabic (native), English (native-like, spoken and written), Russian (A1)</p>
+  </article>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast'),timer;
+  function say(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(timer);timer=setTimeout(function(){toast.classList.remove('show')},1800)}
+  var cv=document.getElementById('cv'),opener=null;
+  function openCv(e){opener=e&&e.currentTarget;cv.hidden=false;document.body.style.overflow='hidden';cv.scrollTop=0;document.getElementById('close-cv').focus()}
+  function closeCv(){cv.hidden=true;document.body.style.overflow='';if(opener&&opener.focus)opener.focus()}
+  document.querySelectorAll('#open-cv,[data-open-cv]').forEach(function(b){b.addEventListener('click',openCv)});
+  document.getElementById('close-cv').addEventListener('click',closeCv);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!cv.hidden)closeCv()});
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.getAttribute('data-copy');
+      try{
+        navigator.clipboard.writeText(v).then(function(){say('Copied '+v)},function(){say('Copy blocked, select the text above')});
+      }catch(e){say('Copy blocked, select the text above')}
+    });
+  });
+})();
+</script>
+</body>
+</html>
